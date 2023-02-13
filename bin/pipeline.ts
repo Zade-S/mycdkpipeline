@@ -4,6 +4,7 @@ import { PipelineStack } from "../lib/pipeline-stack";
 import { BillingStack } from "../lib/billing-stack";
 import { ServiceStack } from "../lib/service-stack";
 import { App, Environment } from "aws-cdk-lib";
+import { IStage } from "aws-cdk-lib/aws-apigateway";
 
 const usEast1Env: Environment = {
   account: "107788087125",
@@ -27,7 +28,7 @@ const pipelineStack = new PipelineStack(app, "PipelineStack", {
 const billingStack = new BillingStack(app, "BillingStack", {
   env: usEast1Env,
   budgetAmount: 5,
-  emailAddress: "gtofig@hotmail.com",
+  emailAddress: "zaid.shamim@sureter.com",
 });
 
 const serviceStackTest = new ServiceStack(app, "ServiceStackTest", {
@@ -58,5 +59,5 @@ pipelineStack.addServiceStage(serviceStackProdBackup, "ProdBackup");
 pipelineStack.addBillingStackToStage(billingStack, prodStage);
 pipelineStack.addServiceIntegrationTestToStage(
   testStage,
-  serviceStackTest.serviceEndpointOutput.importValue
+  serviceStackTest.serviceEndpointOutput.toString()
 );

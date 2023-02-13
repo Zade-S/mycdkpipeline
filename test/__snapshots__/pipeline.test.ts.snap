@@ -435,10 +435,10 @@ Object {
                 },
                 "Configuration": Object {
                   "Branch": "master",
-                  "OAuthToken": "{{resolve:secretsmanager:github-token:SecretString:::}}",
-                  "Owner": "Gtofig",
+                  "OAuthToken": "{{resolve:secretsmanager:github-pipeline0token:SecretString:::}}",
+                  "Owner": "Zade-S",
                   "PollForSourceChanges": false,
-                  "Repo": "aws-pipeline",
+                  "Repo": "aws-cdk-pipeline-stack",
                 },
                 "Name": "Pipeline_Source",
                 "OutputArtifacts": Array [
@@ -457,10 +457,10 @@ Object {
                 },
                 "Configuration": Object {
                   "Branch": "master",
-                  "OAuthToken": "{{resolve:secretsmanager:github-token:SecretString:::}}",
-                  "Owner": "Gtofig",
+                  "OAuthToken": "{{resolve:secretsmanager:github-pipeline0token:SecretString:::}}",
+                  "Owner": "Zade-S",
                   "PollForSourceChanges": false,
-                  "Repo": "express-lambda",
+                  "Repo": "express-lambda-aws",
                 },
                 "Name": "Service_Source",
                 "OutputArtifacts": Array [
@@ -916,7 +916,7 @@ Object {
       "Properties": Object {
         "Authentication": "GITHUB_HMAC",
         "AuthenticationConfiguration": Object {
-          "SecretToken": "{{resolve:secretsmanager:github-token:SecretString:::}}",
+          "SecretToken": "{{resolve:secretsmanager:github-pipeline0token:SecretString:::}}",
         },
         "Filters": Array [
           Object {
@@ -937,7 +937,7 @@ Object {
       "Properties": Object {
         "Authentication": "GITHUB_HMAC",
         "AuthenticationConfiguration": Object {
-          "SecretToken": "{{resolve:secretsmanager:github-token:SecretString:::}}",
+          "SecretToken": "{{resolve:secretsmanager:github-pipeline0token:SecretString:::}}",
         },
         "Filters": Array [
           Object {
